@@ -1,3 +1,4 @@
+import os
 from peewee import *
 from playhouse.postgres_ext import PostgresqlExtDatabase
 import datetime
