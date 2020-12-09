@@ -4,15 +4,16 @@ from playhouse.postgres_ext import PostgresqlExtDatabase
 import datetime
 from flask_login import UserMixin
 
+if 'SANDBOX' == os.environ.get('FLASK_ENV'):
+    DATABASE = connect(os.environ.get('DATABASE_URL'))
 
-
-
+else:
 DATABASE = PostgresqlExtDatabase(
-    os.environ.get('DATABASE'), 
-    host=os.environ.get('DATABASE_HOST'),
-    user=os.environ.get('USER'),
-    password=os.environ.get('PASSWORD'),
-    port=os.environ.get('PGSL_PORT'))
+    'depac', 
+    host='127.0.0.1',
+    user='postgres',
+    password='penny',
+    port=5432)
 
 class User(UserMixin, Model):
     username = CharField(unique=True)
