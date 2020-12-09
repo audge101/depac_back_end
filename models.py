@@ -12,7 +12,7 @@ DATABASE = PostgresqlExtDatabase(
     host=os.environ.get('DATABASE_HOST'),
     user=os.environ.get('USER'),
     password=os.environ.get('PASSWORD'),
-    port=os.environ.get(PS_PORT))
+    port=os.environ.get('PGSL_PORT'))
 
 class User(UserMixin, Model):
     username = CharField(unique=True)
