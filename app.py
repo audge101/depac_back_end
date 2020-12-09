@@ -29,8 +29,8 @@ def load_user(user_id):
     except models.DoesNotExist:
         return None
 
-CORS(plant, origins=['http://localhost:3000', 'https://git.heroku.com/depak.git'], supports_credentials=True)
-CORS(user, origins=['http://localhost:3000', 'https://git.heroku.com/depak.git'], supports_credentials=True)
+CORS(plant, origins=['http://localhost:3000', 'https://depak.herokuapp.com'], supports_credentials=True)
+CORS(user, origins=['http://localhost:3000', 'https://depak.herokuapp.com'], supports_credentials=True)
 
 app.register_blueprint(plant, url_prefix='/directory/plants/')
 app.register_blueprint(user, url_prefix='/directory/users/')
