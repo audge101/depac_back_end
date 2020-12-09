@@ -3,9 +3,12 @@ from playhouse.postgres_ext import PostgresqlExtDatabase
 import datetime
 from flask_login import UserMixin
 
+if 
+
+
 DATABASE = PostgresqlExtDatabase(
     'depac', 
-    host='127.0.0.1',
+    host=os.environ.get('DATABASE_URL'),
     user='postgres',
     password='penny',
     port=5432)
