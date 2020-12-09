@@ -8,12 +8,12 @@ if 'SANDBOX' == os.environ.get('FLASK_ENV'):
     DATABASE = connect(os.environ.get('DATABASE_URL'))
 
 else:
-DATABASE = PostgresqlExtDatabase(
-    'depac', 
-    host='127.0.0.1',
-    user='postgres',
-    password='penny',
-    port=5432)
+    DATABASE = PostgresqlExtDatabase(
+        'depac', 
+        host='127.0.0.1',
+        user='postgres',
+        password='penny',
+        port=5432)
 
 class User(UserMixin, Model):
     username = CharField(unique=True)
