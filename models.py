@@ -3,6 +3,7 @@ from peewee import *
 from playhouse.postgres_ext import PostgresqlExtDatabase
 import datetime
 from flask_login import UserMixin
+from playhouse.db_url import connect
 
 if 'SANDBOX' == os.environ.get('FLASK_ENV'):
     DATABASE = connect(os.environ.get('DATABASE_URL'))
