@@ -7,11 +7,11 @@ if
 
 
 DATABASE = PostgresqlExtDatabase(
-    'depac', 
-    host=os.environ.get('DATABASE_URL'),
-    user='postgres',
-    password='penny',
-    port=5432)
+    os.environ.get('DATABASE'), 
+    host=os.environ.get('DATABASE_HOST'),
+    user=os.environ.get('USER'),
+    password=os.environ.get('PASSWORD'),
+    port=os.environ.get(PS_PORT))
 
 class User(UserMixin, Model):
     username = CharField(unique=True)
