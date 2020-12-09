@@ -3,7 +3,7 @@ from playhouse.postgres_ext import PostgresqlExtDatabase
 import datetime
 from flask_login import UserMixin
 
-if 
+
 
 
 DATABASE = PostgresqlExtDatabase(
