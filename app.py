@@ -56,6 +56,10 @@ def after_request(response):
 def index():
     return 'hi'
 
+if 'SANDBOX' == os.environ.get('FLASK_ENV'):
+  print('\non heroku!')
+  models.initialize()
+
 
 if __name__ == '__main__':
     models.initialize()
